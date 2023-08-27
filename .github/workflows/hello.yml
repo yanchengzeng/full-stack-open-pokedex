@@ -13,4 +13,6 @@ jobs:
       - name: Say hello
         run: |
           echo "Hello World!"copy
+		  date
+		  ls -la
 
