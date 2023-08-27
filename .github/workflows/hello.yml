@@ -16,5 +16,9 @@ jobs:
       - name: Print Date
         run: |
           date
+      - name: Print Folder
+        run: |
+          ls -la
+      
       
       
