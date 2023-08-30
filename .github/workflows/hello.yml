@@ -19,6 +19,21 @@ jobs:
       - name: Print Folder
         run: |
           ls -la
+
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Deploy code
+        uses: appleboy/ssh-action@v0.1.2
+        with:
+            host: ${{secrets.SSH_HOST}}
+            key: ${{secrets.SSH_KEY}}
+            username: ${{secrets.SSH_NAME}}
+            script: |
+              mkdir test
+              cd test
+              git clone https://github.com/yanchengzeng/full-stack-open-pokedex.git
+              echo "Nice Job"
       
       
       
